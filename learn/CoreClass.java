@@ -41,7 +41,7 @@ public class CoreClass
         // System.out.println(n3);
         char[] cs = s1.toCharArray();
         String sc = new String(cs);
-        System.out.println(sc);
+
 
 
     }
