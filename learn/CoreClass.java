@@ -6,10 +6,8 @@ import java.beans.Introspector;
 import java.beans.PropertyDescriptor;
 import java.lang.Integer;
 
-public class CoreClass
-{
-    public static void main(String[] args) throws Exception
-    {
+public class CoreClass {
+    public static void main(String[] args) throws Exception {
         String s1 = "hello!";
         String s2 = new String(new char[] {'h', 'e', 'l', 'l', 'o', '!'});
         String s3 = s1.toUpperCase();
@@ -28,8 +26,7 @@ public class CoreClass
         s1.replace('l', 'w');
         String s4 = "A,B,C,D";
         String[] ss = s4.split("\\e");
-        for (String s : ss) 
-        {
+        for (String s : ss) {
             System.out.println(s);   
         }
         String s5 = String.join("  ", s1, s4);
@@ -58,8 +55,7 @@ public class CoreClass
 
         String[] names = {"shi", "xu"};
         StringJoiner sj =new StringJoiner(", ","hello ", "!");
-        for (String name : names)
-        {
+        for (String name : names) {
             sj.add(name);
         }
         System.out.println(sj.toString());
@@ -87,8 +83,28 @@ public class CoreClass
         else {
             System.out.println("work!");
         }
-        String s8 = Weekday.SUN.name();
-        int n5 = Weekday.MON.ordinal();
+        String s8 = day.name();
+        int n5 = day.ordinal();
+        String s9 = day.tosString();
+        System.out.println(s8 + " " + n5 + " " + s9);
+        switch (day) {
+            case MON:
+            case TUE:
+            case WED:
+            case THU:
+            case FRI:
+            case SAT: {
+                System.out.println("Today is " + day.name() + "!");
+                break;
+            }
+            case SUN: {
+                System.out.println("Today is " + day.name() + "!");
+                break;
+            }
+        }
+        
+        Point p = new Point(123, 456);
+        System.out.println(p.x() + " " + p.y() + " " + p);
 
 
 
@@ -155,3 +171,4 @@ enum Weekday {
     }
 }
 
+record Point(int x, int y) {}
